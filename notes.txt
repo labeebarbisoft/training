@@ -16,4 +16,15 @@
 
 > python mange.py shell (to manually add data using python, can not use simple python)
 
-python manage.py createsuperuser
+> python manage.py createsuperuser
+
+
+In order to create django app in a subfolder:
+
+> mkdir apps
+> cd apps
+> touch __init__.py
+> python ../manage.py createapp rentals
+In RentalsConfig change name from rentals to apps.rentals
+Add this line in main urls:
+> path("", include("apps.rentals.urls")),
